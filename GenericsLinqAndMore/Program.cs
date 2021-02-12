@@ -6,6 +6,7 @@ namespace GenericsLinqAndMore
     {
         static void Main(string[] args)
         {
+            LinkedListIntDemo();
             /*
              * LinkedListInt
              * LinkedList med generics
@@ -16,9 +17,19 @@ namespace GenericsLinqAndMore
              *  - method syntax vs query syntax
              *  - aggregeringer
              *  - sortering og gruppering
-             *
-             *
              */
+        }
+
+        private static void LinkedListIntDemo()
+        {
+            var list = new LinkedListInt();
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            foreach (var value in list)
+            {
+                Console.WriteLine(value);
+            }
         }
     }
 }
