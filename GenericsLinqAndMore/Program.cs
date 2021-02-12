@@ -22,11 +22,20 @@ namespace GenericsLinqAndMore
 
         private static void LinkedListIntDemo()
         {
-            var list = new LinkedListInt();
-            list.Add(1);
-            list.Add(2);
-            list.Add(3);
+            var list = new LinkedListInt(1, 2, 3);
+            //list.Add(1);
+            //list.Add(2);
+            //list.Add(3);
             foreach (var value in list)
+            {
+                Console.WriteLine(value);
+            }
+
+            var list2 = new LinkedList<string>("a", "b", "c");
+            //list.Add(1);
+            //list.Add(2);
+            //list.Add(3);
+            foreach (var value in list2)
             {
                 Console.WriteLine(value);
             }

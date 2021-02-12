@@ -5,12 +5,12 @@ using System.Text;
 
 namespace GenericsLinqAndMore
 {
-    class LinkedListInt : IEnumerable<int>, IEnumerator<int>
+    class LinkedList<T> : IEnumerable<T>, IEnumerator<T>
     {
-        private IntNode _first;
-        private IntNode _current;
+        private Node<T> _first;
+        private Node<T> _current;
 
-        public LinkedListInt(params int[] values)
+        public LinkedList(params T[] values)
         {
             _first = null;
             foreach (var value in values)
@@ -19,12 +19,12 @@ namespace GenericsLinqAndMore
             }
         }
 
-        public void Add(int value)
+        public void Add(T value)
         {
-            _first = new IntNode(_first, value);
+            _first = new Node<T>(_first, value);
         }
 
-        public IEnumerator<int> GetEnumerator()
+        public IEnumerator<T> GetEnumerator()
         {
             _current = null;
             return this;
@@ -52,7 +52,7 @@ namespace GenericsLinqAndMore
             _current = null;
         }
 
-        public int Current => _current.Value;
+        public T Current => _current.Value;
 
         object? IEnumerator.Current => Current;
 
